@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>webUI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="index_content">
+    <div class="index_box">
+        <h3 class="index_title">webUI</h3>
+        <p class="index_describe">既是学习也是总结，只为更好的接近你</p>
+        <div class="index_go_btn" onclick="goMyWebUI()">
+            让我们走进自己的世界
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function IsPC() {
+        var userAgentInfo = navigator.userAgent;
+        var Agents = ["Android", "iPhone",
+            "SymbianOS", "Windows Phone",
+            "iPad", "iPod"];
+        var flag = true;
+        for (var v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+
+    function goMyWebUI() {
+        if (IsPC()) {
+            window.location.href = 'web/index.html';
+        } else {
+            window.location.href = 'phone/index.html'
+        }
+    }
+</script>
+</body>
+</html>
